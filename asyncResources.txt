@@ -16,3 +16,7 @@ https://javascript.info/event-loop
 ASYNC AWAIT
 
 https://javascript.info/async-await
+
+MACRO VS MICROTASKS
+
+https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/
