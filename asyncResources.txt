@@ -1,1 +1,18 @@
+THROTTLE VS DEBOUNCE
+
+Visual demo:
 http://demo.nimius.net/debounce_throttle/
+
+Metaphor:
+You have a friend named Chatty who likes to talk with you via IM. Assuming when she talks she sends a new message every 5 seconds, while your IM application icon is bouncing up and down, you can take the...
+Naive approach: check every message as long as it arrives. When your app icon bounces, check. It's not the most effective way, but you are always up-to-date.
+Throttle approach: you check once every 5 minutes (when there are new ones). When new message arrives, if you have checked anytime in the last 5 minutes, ignore it. You save your time with this approach, while still in the loop.
+Debounce approach: you know Chatty, she breaks down a whole story into pieces, sends them in one message after another. You wait until Chatty finishes the whole story: if she stops sending messages for 5 minutes, you would assume she has finished, now you check all.
+
+EVENT LOOP
+
+https://javascript.info/event-loop
+
+ASYNC AWAIT
+
+https://javascript.info/async-await
