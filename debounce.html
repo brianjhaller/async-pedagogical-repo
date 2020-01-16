@@ -1,0 +1,26 @@
+<html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Debounce Demo</title>
+</head> 
+<body> 
+<button id="debounce"> 
+    Debounce 
+</button> 
+<script> 
+    let button = document.getElementById("debounce"); 
+    const debounce = (func, delay) => { 
+        let debounceTimer 
+        return function() { 
+            clearTimeout(debounceTimer) 
+            debounceTimer = setTimeout(func, delay) 
+        } 
+    }  
+    button.addEventListener('click', debounce(() => { 
+            alert("This gets executed once after 3 seconds.") }, 3000)); 
+</script> 
+</body> 
+</html> 
