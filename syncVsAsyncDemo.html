@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>sync vs async demo</title>
+</head>
+<body>
+    <div id="sProgress" style="background:lightblue; height:20px; width: 500px;"></div>
+    <div id="sProgressText" style="background:lightblue; height:20px; width: 500px;"></div>
+
+    <div id="aProgress" style="background:lightcoral; height:20px; width: 500px;"></div>
+    <div id="aProgressText" style="background:lightcoral; height:20px; width: 500px;"></div>
+
+
+    <button id="syncFunc"></button>
+    <button id="asyncFunc"></button>
+    <button id="alertButton"></button>
+    <script>
+
+    function count() {
+        for (let i = 0; i <= 1000000; i += 1) {
+            sProgress.innerText = i;
+        }
+    }
+    let currentChild;
+
+    let alertButton = document.getElementById('alertButton');
+    alertButton.innerText = "CLICK TO ALERT"
+    alertButton.addEventListener('click', () => {
+        let addedDiv = document.createElement('span');
+        addedDiv.innerText = "CLICKED";
+        currentChild.append(addedDiv);
+        console.log("WOW!");
+    })
+
+    let syncButton = document.getElementById('syncFunc')
+    syncButton.innerText = "CLICK TO RUN SYNC FUNCTION"
+    syncButton.addEventListener('click', () => {
+        currentChild = document.getElementById('sProgressText');
+        count();
+    })
+
+    let j = 0;
+    function aCount() {
+        do {
+            j += 1;
+            aProgress.innerText = j;
+        } 
+        while (j % 1000 != 0);
+
+        if (j < 1000000) {
+            setTimeout(aCount);
+        }
+    }
+
+    let asyncButton = document.getElementById('asyncFunc')
+    asyncButton.innerText = "CLICK TO RUN ASYNC FUNCTION"
+    asyncButton.addEventListener('click', () => {
+        currentChild = document.getElementById('aProgressText');
+        aCount();
+    })
+
+</script>
+</body>
+</html>
