@@ -6,7 +6,7 @@ const foo = () => {
   console.log('foo');
   setTimeout(bar, 0);
   new Promise((resolve, reject) =>
-    resolve('should be right after baz, before bar')
+    resolve('buzz')
   ).then(resolve => console.log(resolve));
   baz();
 }

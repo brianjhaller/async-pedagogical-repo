@@ -16,6 +16,7 @@ https://javascript.info/event-loop
 ASYNC AWAIT
 
 https://javascript.info/async-await
+https://www.i-programmer.info/programming/javascript/11425-javascript-async-basic-async-a-await.html
 
 MACRO VS MICROTASKS
 

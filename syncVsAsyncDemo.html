@@ -19,13 +19,6 @@
     <button id="alertButton"></button>
     <script>
 
-    function count() {
-        for (let i = 0; i <= 1000000; i += 1) {
-            sProgress.innerText = i;
-        }
-    }
-    let currentChild;
-
     let alertButton = document.getElementById('alertButton');
     alertButton.innerText = "CLICK TO ALERT"
     alertButton.addEventListener('click', () => {
@@ -35,12 +28,19 @@
         console.log("WOW!");
     })
 
+    function count() {
+        for (let i = 0; i <= 5000000; i += 1) {
+            sProgress.innerText = i;
+        }
+    }
+    let currentChild;
+
     let syncButton = document.getElementById('syncFunc')
     syncButton.innerText = "CLICK TO RUN SYNC FUNCTION"
     syncButton.addEventListener('click', () => {
         currentChild = document.getElementById('sProgressText');
         count();
-    })
+    });
 
     let j = 0;
     function aCount() {
@@ -50,7 +50,7 @@
         } 
         while (j % 1000 != 0);
 
-        if (j < 1000000) {
+        if (j < 5000000) {
             setTimeout(aCount);
         }
     }
