@@ -4,9 +4,9 @@ async function helloThere () {
 }
 
 
-// console.log("before");
-// console.log(helloThere() + 4);
-// console.log("after");
+console.log("before");
+console.log(helloThere() + 4);
+console.log("after");
 
 
 
@@ -26,6 +26,6 @@ async function pause(t) {
     console.log("after");
 }
 
-console.log("Before call");
-pause(1000);
-console.log("After call");
+// console.log("Before call");
+// pause(1000);
+// console.log("After call");
